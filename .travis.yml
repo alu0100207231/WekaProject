@@ -1,6 +1,8 @@
 language: java
 sudo: false
 dist: trusty
+jdk:
+  - oraclejdk8
 addons:
   sonarcloud:
     organization: "alu0100207231-github" # the key of the org you chose at step #3
