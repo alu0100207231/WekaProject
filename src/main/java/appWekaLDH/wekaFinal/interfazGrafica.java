@@ -101,6 +101,16 @@ package appWekaLDH.wekaFinal;
  		panel_seleccion.add(btnKmeans);
  		
  		JButton btnRegresinS = new JButton("REGRESIÓN S");
+ 		btnRegresinS.addActionListener(new ActionListener() {
+ 			public void actionPerformed(ActionEvent e) {
+ 				SimpleLinearRegressionWeka sim_reg = new SimpleLinearRegressionWeka(file_data);
+ 				try {
+ 					dtrpnResultado.setText(sim_reg.PrintResult());
+ 					} catch (Exception e1) {
+ 						e1.printStackTrace();
+ 						}
+ 				}
+ 			});
  		panel_seleccion.add(btnRegresinS);
  		
  		JButton btnLRegresion = new JButton("Linear Regression");
@@ -159,6 +169,21 @@ package appWekaLDH.wekaFinal;
  				}
  			});
  		
+ 		btnMp.addActionListener(new ActionListener() {
+ 			public void actionPerformed(ActionEvent e) {
+ 				
+ 				lblAlgoritmo.setVisible(true);
+ 				lblAlgoritmo.setText("M5PTree");
+ 				
+ 				M5PTree m5p = new M5PTree(file_data);
+ 				try {
+ 					dtrpnResultado.setText(m5p.PrintResult());
+ 					} catch (Exception e1) {
+ 						e1.printStackTrace();
+ 						}
+ 				}
+ 			});
+ 		
  		btnKstart.addActionListener(new ActionListener() {
  			public void actionPerformed(ActionEvent e) {
  				
@@ -198,6 +223,21 @@ package appWekaLDH.wekaFinal;
  				ZeroR_Alg zeroR = new ZeroR_Alg(file_data);
  				try {
  					dtrpnResultado.setText(zeroR.PrintResult());
+ 					} catch (Exception e1) {
+ 						e1.printStackTrace();
+ 						}
+ 				}
+ 			});
+ 		
+ 		btnKmeans.addActionListener(new ActionListener() {
+ 			public void actionPerformed(ActionEvent e) {
+ 				
+ 				lblAlgoritmo.setVisible(true);
+ 				lblAlgoritmo.setText("K-Means");
+ 				
+ 				LazyIBk knn = new LazyIBk(file_data);
+ 				try {
+ 					dtrpnResultado.setText(knn.PrintResult());
  					} catch (Exception e1) {
  						e1.printStackTrace();
  						}

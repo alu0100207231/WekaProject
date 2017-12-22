@@ -59,7 +59,7 @@ public class LazyKStar {
         resultado += "\n";
         resultado += eval.toMatrixString();
         resultado += "\n";
-        
+       
         return resultado;
 	}
 
