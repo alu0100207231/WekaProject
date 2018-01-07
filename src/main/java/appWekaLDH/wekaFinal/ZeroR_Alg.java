@@ -7,12 +7,16 @@ package appWekaLDH.wekaFinal;
  import weka.classifiers.rules.ZeroR;
  import weka.core.Instances;
  import weka.core.converters.ArffLoader;
+ 
  /**
   * Apply ZeroR from weka to the data set
   * @author Miguel Aurelio Garcia Gonzalez
   */
  public class ZeroR_Alg {
  
+	/**
+	 * The eval.
+	 */
  	private Evaluation eval;
  	
  	/**
@@ -46,9 +50,14 @@ package appWekaLDH.wekaFinal;
  
  	}
  	
+ 	/**
+ 	 * Prints the result of the Algorithm ZeroR
+ 	 * @return String
+ 	 * @throws Exception
+ 	 */
  	String PrintResult() throws Exception {
  		
- 		String resultado = "";
+ 		String resultado = "Algoritmo ZeroR";
         resultado = eval.toClassDetailsString();
         resultado += "\n";
         resultado += eval.toCumulativeMarginDistributionString();

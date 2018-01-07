@@ -20,7 +20,7 @@ public class RandomForest_Tree {
 	private Evaluation eval;
 	
 	/**
-	 * class constructor .
+	 * class constructor.
 	 *
 	 * @param file_data the file data
 	 */
@@ -52,7 +52,7 @@ public class RandomForest_Tree {
 	}
 	
 	/**
-	 * Prints the result.
+	 * Prints the result of the Algorithm RandomForest.
 	 *
 	 * @return the string
 	 * @throws Exception the exception

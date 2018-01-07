@@ -4,14 +4,12 @@ import java.io.File;
 
 import junit.framework.TestCase;
 
-
 /**
  * Test simple de la clase LinearRegressionWeka
  * @author Hilario Pérez
  *
  */
-
-public class SimpleLinearRegressionTest extends TestCase {
+public class LazyIBkTest extends TestCase {
 	
 	/**
 	 * Comprueba que el fichero de datos existe
@@ -20,30 +18,18 @@ public class SimpleLinearRegressionTest extends TestCase {
 	 * @throws ClassNotFoundException
 	 */
 	public final void testFileExists() throws InstantiationException, IllegalAccessException, ClassNotFoundException {
-		File file = new File("datasheets/cpu.arff");
+		File file = new File("datasheets/iris.arff");
 		assertTrue(file.exists());
 	}
 
 	/**
 	 * Comprueba que no falle la ejecucion del metodo al importar el fichero
-	 * @param datasheet cpu.arff
+	 * @param datasheet iris.arff
 	 */
-	public final void testSimpleLinearRegressionWeka() {
-		File file_import = new File("datasheets/cpu.arff");
-		SimpleLinearRegressionWeka tester = new SimpleLinearRegressionWeka(file_import);
+	public final void testLazyIBk() {
+		File file_import = new File("datasheets/iris.arff");
+		LazyIBk tester = new LazyIBk(file_import);
 		assertNotNull(tester);
-	}
-	
-	/**
-	 * Metodo para ver si el resultado al mostrar por pantalla tiene contenido distinto del defininido en la clase como predeterminado
-	 * @throws Exception
-	 * @param datasheet cpu.arff
-	 */
-	public final void testPrintResult() throws Exception {
-		File file_import = new File("datasheets/cpu.arff");
-		SimpleLinearRegressionWeka tester = new SimpleLinearRegressionWeka(file_import);	
-		String resultado = tester.PrintResult();
-		assertTrue(resultado != "Simple Linear Regression\n");	
 	}
 	
 	/**
@@ -51,11 +37,22 @@ public class SimpleLinearRegressionTest extends TestCase {
 	 * @throws Exception
 	 * @param datasheet iris.arff
 	 */
-	/*public final void testPrintResult2() throws Exception {
+	public final void testPrintResult() throws Exception {
 		File file_import = new File("datasheets/iris.arff");
-		SimpleLinearRegressionWeka tester = new SimpleLinearRegressionWeka(file_import);	
+		LazyIBk tester = new LazyIBk(file_import);	
 		String resultado = tester.PrintResult();
-		assertTrue(resultado != "Simple Linear Regression\n");	
+		assertTrue(resultado != "IBk\n");	
+	}
+
+	/**
+	 * Metodo para ver si el resultado al mostrar por pantalla tiene contenido distinto del defininido en la clase como predeterminado
+	 * @throws Exception
+	 * @param datasheet cpu.arff
+	 */
+	/*public final void testPrintResult2() throws Exception {
+		File file_import = new File("datasheets/cpu.arff");
+		LazyIBk tester = new LazyIBk(file_import);	
+		assertNotNull(tester.PrintResult());	
 	}*/
 
 }

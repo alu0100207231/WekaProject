@@ -10,14 +10,17 @@ import weka.core.converters.ArffLoader;
 
 /**
  * Apply IBk from Weka to the data set
- * @author HilarioJ
+ * @author Hilario Pérez
  *
  */
 public class LazyIBk {
 	
-	private Evaluation eval;
+	private Evaluation eval; /// Variable Evaluadora
 	
-	
+	/**
+	 * Constructor de la clase LazyIBk
+	 * @param file_data
+	 */
 	public LazyIBk(File file_data) {
 		Instances trainIns = null;
 		IBk knn;
@@ -44,9 +47,14 @@ public class LazyIBk {
 
 }
 
+	/**
+	 * Método que formatea el resultado del Algoritmo IBk
+	 * @return String
+	 * @throws Exception
+	 */
 	String PrintResult() throws Exception {
 	
-		String resultado = "";
+		String resultado = "IBk";
 		resultado = eval.toClassDetailsString();
 		resultado += "\n";
 		resultado += eval.toCumulativeMarginDistributionString();

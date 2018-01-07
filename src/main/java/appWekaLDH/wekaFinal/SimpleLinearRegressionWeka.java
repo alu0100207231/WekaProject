@@ -12,13 +12,17 @@ import weka.core.converters.ArffLoader;
 
 /**
  * Apply IBk from Weka to the data set
- * @author HilarioJ
+ * @author Hilario Pérez
  *
  */
 public class SimpleLinearRegressionWeka {
 	
-	private Evaluation eval;
+	private Evaluation eval; /// Variable evaluadora
 	
+	/**
+	 * Constructor de la clase SimpleLinearRegressionWeka
+	 * @param file_data
+	 */
 	public SimpleLinearRegressionWeka(File file_data) {
 		SimpleLinearRegression model;
 
@@ -44,6 +48,11 @@ public class SimpleLinearRegressionWeka {
 		}
 	}
 
+	/**
+	 * Método que formatea el resultado del Algoritmo Regresión Lineal Simple
+	 * @return String
+	 * @throws Exception
+	 */
 	String PrintResult() throws Exception {
 	
 		String resultado = "";
